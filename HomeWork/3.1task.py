@@ -1,6 +1,18 @@
-link = "C:\python\work.txt"
-link2 = link.replace(":", "").split('\\')
-link3 = link2[-1].split(".")
-print(link3[0])
-print(link2[0])
-print(link2[1])
+def modification(lst):
+   lst [0], lst[-1] = lst[-1], lst[0]
+   return lst
+data = [
+    [1, 2, 3],
+    [1, 2, 3, 4, 5],
+    ['н', 'л', 'о', 'с']
+]
+
+test_data = [
+    [3, 2, 1], [5, 2, 3, 4, 1], ['с', 'л', 'о', 'н']
+]
+
+
+for i, d in enumerate(data):
+    assert modification(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
+    print(f'Тестовый набор {d} прошёл проверку')
+print('Всё ок')
